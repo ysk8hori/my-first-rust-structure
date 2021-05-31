@@ -29,6 +29,12 @@ mod tests {
         };
         assert_eq!(user1.active, user2.active);
     }
+
+    #[test]
+    fn use_tuple_struct() {
+        let red = Color(255, 0, 0);
+        assert_eq!(red.0, 255);
+    }
 }
 
 struct User {
@@ -46,3 +52,5 @@ fn build_user(username: &str, email: &str) -> User {
         active: true,
     }
 }
+
+struct Color(i32, i32, i32);
